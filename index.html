@@ -7,22 +7,17 @@
     <title>Radio Jarocho YouTube/Instagram</title>
 </head>
 <body>
-    Radio Jarocho's feed goes here
-    <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>JS Bin</title>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-</head>
-<body>
-<div id='hello0'></div>
-<div id='hello1'></div>
-<div id='hello2'></div>
-<div id='hello3'></div>
+    <iframe id="youtube_video0" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <div id='hello0'></div>
+    <div id='hello1'></div>
+    <div id='hello2'></div>
+    <div id='hello3'></div>
+    <iframe id="youtube_video1" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube_video2" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube_video3" width="600" height="340" frameborder="0" allowfullscreen></iframe>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 <script type="text/javascript">
     var imgs = [];
@@ -37,5 +32,16 @@
         }
     });
     userFeed.run();
+
+//YouTube channell
+    var channelID = "UComr9OPBaMZSlYAALkq1BHQ";
+    $.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D'+channelID, function(data) {
+        for(i=0;i<4;i++) {
+        var link = data.items[i].link;
+        var id = link.substr(link.indexOf("=")+1);
+        $("#youtube_video" + i.toString()).attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+        $()
+        }
+    });
 </script>
 </html>
