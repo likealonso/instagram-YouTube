@@ -6,16 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Radio Jarocho YouTube/Instagram</title>
 </head>
+<style>
+    .container {
+        /* display: flex;
+        flex-wrap: wrap; */
+        /* height: 400px; */
+        /* align-items: flex-start */
+    }
+    
+    .ig {
+        background-color: blue;
+        width: 400px;
+        height: 400px
+    }
+    
+    /* .container > div {
+        width: 50%;
+        height: 50%        
+    } */
+</style>
 <body>
-    <iframe id="youtube_video0" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <div id='igPost1'></div>
-    <div id='igPost2'></div>
-    <div id='igPost3'></div>
-    <div id='igPost4'></div>
+<div class='container'>
+    <iframe id="youtube_video0" width="500" height="300" frameborder="0" allowfullscreen></iframe>
+    
+    <div class='ig' id='igPost1'></div>    
+    <div class='ig' id='igPost2'></div>
+    <div class='ig' id='igPost3'></div>
+    <div class='ig' id='igPost4'></div>
+    
     <iframe id="youtube_video1" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <div id='igPost5'></div>
+    <div class='ig' id='igPost5'></div>
     <iframe id="youtube_video2" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <div id='igPost6'></div>
+    <div class='ig' id='igPost6'></div>
+</div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -35,9 +58,10 @@
 
 //Instagram posts
     var imgs = [];
-    var accessToken = '31572390.2309e51.fce046a444c940679d1ee3e66e37b768'
+    var accessToken = '1495441149.ffcdf6e.fc01ff26992c47998897da391b2d0cda'
+
     var userFeed1 = new Instafeed({
-        get: 'user', userId: '31572390', accessToken: accessToken, 
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost1',
         filter: function(images){
@@ -46,9 +70,7 @@
         }
     });
     var userFeed2 = new Instafeed({
-        get: 'user',
-        userId: '31572390',
-        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost2',
         filter: function(images){
@@ -57,9 +79,7 @@
         }
     });
     var userFeed3 = new Instafeed({
-        get: 'user',
-        userId: '31572390',
-        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost3',
         filter: function(images){
@@ -68,9 +88,7 @@
         }
     });
     var userFeed4 = new Instafeed({
-        get: 'user',
-        userId: '31572390',
-        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost4',
         filter: function(images){
@@ -79,9 +97,7 @@
         }
     });
     var userFeed5 = new Instafeed({
-        get: 'user',
-        userId: '31572390',
-        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost5',
         filter: function(images){
@@ -90,9 +106,7 @@
         }
     });
     var userFeed6 = new Instafeed({
-        get: 'user',
-        userId: '31572390',
-        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        get: 'user', userId: '1495441149', accessToken: accessToken, 
         resolution: 'standard_resolution',
         target: 'igPost6',
         filter: function(images){
@@ -100,6 +114,7 @@
             return images.created_time === imgs[5]
         }
     });
+    
     userFeed1.run();
     userFeed2.run();
     userFeed3.run();
