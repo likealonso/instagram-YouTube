@@ -8,36 +8,50 @@
 </head>
 <style>
     .container {
-        /* display: flex;
-        flex-wrap: wrap; */
-        /* height: 400px; */
-        /* align-items: flex-start */
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px 200px
     }
     
     .ig {
         background-color: blue;
-        width: 400px;
-        height: 400px
+        width: 350px;
+        height: 300px;
+        overflow: hidden;
+        text-align:center;
+        margin-bottom: 20px
     }
     
-    /* .container > div {
-        width: 50%;
-        height: 50%        
+    /* .ig:not(:first-child):not(:last-child) {
+        margin-left: 20px;
+        margin-right: 20px;
     } */
+    
+    .ig:nth-child(2), 
+    .ig:nth-child(5) {
+        margin: 0px 20px
+    }
+
+    .ig img {
+        height:100%;
+        width:100%;
+        object-fit: cover
+    }
+    
 </style>
 <body>
 <div class='container'>
-    <iframe id="youtube_video0" width="500" height="300" frameborder="0" allowfullscreen></iframe>
     
+    <iframe id="youtube_video0" width="600" height="300" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost1'></div>    
     <div class='ig' id='igPost2'></div>
     <div class='ig' id='igPost3'></div>
     <div class='ig' id='igPost4'></div>
-    
-    <iframe id="youtube_video1" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube_video1" width="600" height="300" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost5'></div>
-    <iframe id="youtube_video2" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <iframe style='margin: 0px 20px' id="youtube_video2" width="600" height="300" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost6'></div>
+    
 </div>
 </body>
 
