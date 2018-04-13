@@ -8,5 +8,34 @@
 </head>
 <body>
     Radio Jarocho's feed goes here
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+<div id='hello0'></div>
+<div id='hello1'></div>
+<div id='hello2'></div>
+<div id='hello3'></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+<script type="text/javascript">
+    var imgs = [];
+    var accessToken = '31572390.2309e51.fce046a444c940679d1ee3e66e37b768'
+    var userFeed = new Instafeed({
+        get: 'user', userId: '31572390', accessToken: accessToken, 
+        resolution: 'standard_resolution',
+        target: 'hello0',
+        filter: function(images){
+        imgs.push(images.created_time)
+        return images.created_time === imgs[0]
+        }
+    });
+    userFeed.run();
+</script>
 </html>
