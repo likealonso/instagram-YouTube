@@ -8,40 +8,104 @@
 </head>
 <body>
     <iframe id="youtube_video0" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <div id='hello0'></div>
-    <div id='hello1'></div>
-    <div id='hello2'></div>
-    <div id='hello3'></div>
+    <div id='igPost1'></div>
+    <div id='igPost2'></div>
+    <div id='igPost3'></div>
+    <div id='igPost4'></div>
     <iframe id="youtube_video1" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <div id='igPost5'></div>
     <iframe id="youtube_video2" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <iframe id="youtube_video3" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <div id='igPost6'></div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 <script type="text/javascript">
-    var imgs = [];
-    var accessToken = '31572390.2309e51.fce046a444c940679d1ee3e66e37b768'
-    var userFeed = new Instafeed({
-        get: 'user', userId: '31572390', accessToken: accessToken, 
-        resolution: 'standard_resolution',
-        target: 'hello0',
-        filter: function(images){
-        imgs.push(images.created_time)
-        return images.created_time === imgs[0]
-        }
-    });
-    userFeed.run();
 
-//YouTube channell
+//YouTube channel
     var channelID = "UComr9OPBaMZSlYAALkq1BHQ";
     $.getJSON('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D'+channelID, function(data) {
-        for(i=0;i<4;i++) {
+        for(i=0;i<3;i++) {
         var link = data.items[i].link;
         var id = link.substr(link.indexOf("=")+1);
         $("#youtube_video" + i.toString()).attr("src","https://youtube.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
         $()
         }
     });
+
+//Instagram posts
+    var imgs = [];
+    var accessToken = '31572390.2309e51.fce046a444c940679d1ee3e66e37b768'
+    var userFeed1 = new Instafeed({
+        get: 'user', userId: '31572390', accessToken: accessToken, 
+        resolution: 'standard_resolution',
+        target: 'igPost1',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[0]
+        }
+    });
+    var userFeed2 = new Instafeed({
+        get: 'user',
+        userId: '31572390',
+        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        resolution: 'standard_resolution',
+        target: 'igPost2',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[1]
+        }
+    });
+    var userFeed3 = new Instafeed({
+        get: 'user',
+        userId: '31572390',
+        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        resolution: 'standard_resolution',
+        target: 'igPost3',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[2]
+        }
+    });
+    var userFeed4 = new Instafeed({
+        get: 'user',
+        userId: '31572390',
+        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        resolution: 'standard_resolution',
+        target: 'igPost4',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[3]
+        }
+    });
+    var userFeed5 = new Instafeed({
+        get: 'user',
+        userId: '31572390',
+        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        resolution: 'standard_resolution',
+        target: 'igPost5',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[4]
+        }
+    });
+    var userFeed6 = new Instafeed({
+        get: 'user',
+        userId: '31572390',
+        accessToken: '31572390.2309e51.fce046a444c940679d1ee3e66e37b768',
+        resolution: 'standard_resolution',
+        target: 'igPost6',
+        filter: function(images){
+            imgs.push(images.created_time)
+            return images.created_time === imgs[5]
+        }
+    });
+    userFeed1.run();
+    userFeed2.run();
+    userFeed3.run();
+    userFeed4.run();
+    userFeed5.run();
+    userFeed6.run();
+
 </script>
 </html>
