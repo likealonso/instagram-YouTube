@@ -7,13 +7,16 @@
     <title>Radio Jarocho YouTube/Instagram</title>
 </head>
 <style>
+    h1 {
+        text-align: center
+    }
     .container {
         display: flex;
         flex-wrap: wrap;
-        margin: 75px;
-        justify-content: center;
-        
+        margin: 25px 75px;
+        justify-content: center; 
     }
+
     .ig {
         background-color: red;
         width: 250px;
@@ -33,6 +36,7 @@
         width:100%;
         object-fit: cover
     }
+
     #youtube_video2 {
         margin: 0px 20px
     }
@@ -64,12 +68,12 @@
         .ig {
         width: 300px;
         height: 300px;
-        /* margin-bottom: 20px */
-    }
+        }
 
         .ig:nth-child(2) {
             margin-top: 20px
         }
+
         .ig:nth-child(4),
         .ig:nth-child(5) {
             margin-top: 0px;
@@ -85,31 +89,31 @@
     }
 
     @media (max-width: 825px) {
-    .ig {
-        width: 350px;
-        height: auto;
+        .ig {
+            width: 350px;
+            height: auto;
+        }
+        .ig:nth-child(3),
+        .ig:nth-child(6),
+        .ig:nth-child(7) {
+            margin-left: 20px
+        }
+        .ig:nth-child(5) {
+            margin-bottom: 20px
+        }
     }
-    .ig:nth-child(3),
-    .ig:nth-child(6),
-    .ig:nth-child(7) {
-        margin-left: 20px
-    }
-    .ig:nth-child(5) {
-        margin-bottom: 20px
-    }
-}
 
-@media (min-width: 400px) and (max-width: 560px) {
-    .ig {
+    @media (min-width: 400px) and (max-width: 560px) {
+        .ig {
         width: 250px;
         height: 250px;
+        }
     }
-}
     
 </style>
 <body>
+<h1>MEDIA</h1>
 <div class='container'>
-    
     <iframe id="youtube_video0" width="500" height="250" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost1'></div>    
     <div class='ig' id='igPost2'></div>
