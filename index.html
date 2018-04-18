@@ -10,23 +10,19 @@
     .container {
         display: flex;
         flex-wrap: wrap;
-        margin: 0px 200px
+        margin: 75px;
+        justify-content: center;
+        
     }
-    
     .ig {
         background-color: blue;
-        width: 350px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         overflow: hidden;
         text-align:center;
         margin-bottom: 20px
     }
-    
-    /* .ig:not(:first-child):not(:last-child) {
-        margin-left: 20px;
-        margin-right: 20px;
-    } */
-    
+
     .ig:nth-child(2), 
     .ig:nth-child(5) {
         margin: 0px 20px
@@ -38,18 +34,45 @@
         object-fit: cover
     }
     
+    @media (max-width: 1210px) {
+        .container {
+            background: blue
+        }
+
+        .ig {
+            margin-top: 20px;
+            margin-right: 20px
+        }
+
+        .ig:nth-child(5) {
+            margin: 20px 20px 0px 0px
+        }
+
+        #youtube_video1 {
+            margin: 0px
+        }
+    }
+    
+    
+    
+    /* .ig:not(:first-child):not(:last-child) {
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+
+    
 </style>
 <body>
 <div class='container'>
     
-    <iframe id="youtube_video0" width="600" height="300" frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube_video0" width="500" height="250" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost1'></div>    
     <div class='ig' id='igPost2'></div>
     <div class='ig' id='igPost3'></div>
     <div class='ig' id='igPost4'></div>
-    <iframe id="youtube_video1" width="600" height="300" frameborder="0" allowfullscreen></iframe>
+    <iframe id="youtube_video1" width="500" height="250" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost5'></div>
-    <iframe style='margin: 0px 20px' id="youtube_video2" width="600" height="300" frameborder="0" allowfullscreen></iframe>
+    <iframe style='margin: 0px 20px' id="youtube_video2" width="500" height="250" frameborder="0" allowfullscreen></iframe>
     <div class='ig' id='igPost6'></div>
     
 </div>
